@@ -1,0 +1,16 @@
+{
+    "$id": "https://example.com/person.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "CreateResource",
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "format": "uuid",
+        "description": "Resource identifier."
+      }
+    },
+    "required": [
+      "id"
+    ]
+  }

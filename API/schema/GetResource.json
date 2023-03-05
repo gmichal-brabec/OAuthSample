@@ -1,0 +1,21 @@
+{
+    "$id": "https://example.com/person.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "GetResource",
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "format": "uuid",
+        "description": "Resource identifier."
+      },
+      "val": {
+        "type": "string",
+        "description": "Resource value."
+      }
+    },
+    "required": [
+      "id",
+      "val"
+    ]
+  }

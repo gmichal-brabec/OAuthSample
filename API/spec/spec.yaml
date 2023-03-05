@@ -1,0 +1,66 @@
+openapi: 3.0.0
+info:
+  title: Resource API
+  description: TODO
+  version: 0.0.1
+servers:
+  - url: https://ec2-52-19-16-214.eu-west-1.compute.amazonaws.com:5555/
+    description: Optional server description, e.g. Main (production) server
+paths:
+  /test/res:
+    put:
+      summary: Create new resource.
+      responses:
+        '201':
+          description: New resource created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: uuid
+        '500':
+          description: Resource creation failed
+  /test/res/{id}:
+    get:
+      summary: Get a resource by ID
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: UUID identifier of the resource
+      responses:
+        '200':
+          description: New resource created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: uuid
+                  val:
+                    type: string
+        '500':
+          description: Resource creation failed
+    post:
+      summary: Update a resource by ID
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: UUID identifier of the resource
+      responses:
+        '200':
+          description: New resource created
+        '500':
+          description: Resource creation failed
